@@ -1,0 +1,59 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url('https://cdn.stocksnap.io/img-thumbs/960w/blue-night_KHM8QPLLYA.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    font-family: sans-serif;
+    height: 400px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(70px,1fr));
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    margin: 150px;
+}
+
+.grid-out {
+    border: 2px solid black;
+    border-radius: 3px;
+    grid-area: 1/1/ span 1/ span 5;
+    background-color: rgb(252, 186, 3);
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.grid-num {
+    background-color: rgb(255, 242, 208);
+}
+
+.grid-oper {
+    background-color: rgb(99, 98, 98);
+    color: white;
+}
+
+#back {
+    font-size: 30px;
+}
+
+#del {
+    background-color: rgb(219, 127, 127);
+    font-size: 36px;
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: rgb(182, 192, 201);
+    font-size: 40px;
+}

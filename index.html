@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="calculator.js"></script>
+    <link rel="stylesheet" href="styler.css">
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <div class="grid-out" id="output"></div>
+        <button class="grid-oper" id="Backspace">⌫</button>
+        <button class="grid-num">7</button>
+        <button class="grid-num">8</button>
+        <button class="grid-num">9</button>
+        <button class="grid-oper" id="divide">÷</button>
+        <button class="grid-oper" id="plusMinus">±</button>
+        <button class="grid-num">4</button>
+        <button class="grid-num">5</button>
+        <button class="grid-num">6</button>
+        <button class="grid-oper" id="multiply">x</button>
+        <button class="grid-oper" id="del">AC</button>
+        <button class="grid-num">1</button>
+        <button class="grid-num">2</button>
+        <button class="grid-num">3</button>
+        <button class="grid-oper" id="subtract">-</button>
+        <button class="grid-oper" id="del">C</button>
+        <button class="grid-num">0</button>
+        <button class="grid-num">.</button>
+        <button class="grid-oper" id="equals">=</button>
+        <button class="grid-oper" id="add">+</button>
+
+    </div>
+
+    <script>
+
+        const btns = document.querySelectorAll('button');
+
+        let displayStr = "";
+        let clearAfterAnswer = false;
+
+        btns.forEach((btn) => {
+
+            btn.addEventListener('click', () => {
+                let inChar = btn.textContent;
+                [displayStr,clearAfterAnswer] = updateDisplay(inChar, displayStr, clearAfterAnswer);
+                document.getElementById('output').textContent = displayStr;
+            });
+
+        });
+
+        window.addEventListener('keydown', (event) => {
+
+            console.log(event);
+            let inChar = processKeyInput(event);
+            
+            [displayStr,clearAfterAnswer] = updateDisplay(inChar, displayStr, clearAfterAnswer);
+            console.log("displayStr1 " + displayStr);
+            document.getElementById('output').textContent = displayStr;
+            console.log("displayStr2 " + displayStr);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
